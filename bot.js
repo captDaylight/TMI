@@ -53,7 +53,6 @@ const negativeGifs = [
 ];
 
 const byeGifs = [
-  'https://media.giphy.com/media/3orieStB8OH7lanfGg/giphy.gif',
   'https://media.giphy.com/media/Y8ocCgwtdj29O/giphy.gif',
   'https://media.giphy.com/media/GB0lKzzxIv1te/giphy.gif',
   'https://media.giphy.com/media/l2Sq5L1byCRgztEZi/giphy.gif'
@@ -154,7 +153,7 @@ controller.on('direct_message,direct_mention,mention', function(bot, message) {
   bot.startConversation(message,function(err,convo) {
     bot.reply(message, {attachments: [{
       text: 'WOOF WOOF',
-      image_url: 'https://lh3.googleusercontent.com/WmDO6Z1gcsWsDfwXl5lJZrZVQ-hmyItX6InqGmGZb746rQgd3S6Rc76wsuFtyOG7gdeXafqm6vljhlo=w1316-h803',
+      image_url: 'http://i.imgur.com/yRE93j0.jpg',
     }]});
 
     convo.ask(`${getRanItem(introPhrases)}. how are you?`, [
