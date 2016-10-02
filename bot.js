@@ -66,13 +66,27 @@ const negativeGifs = [
   'https://media.giphy.com/media/bMehR5UxZuFS8/giphy.gif',
   'https://media.giphy.com/media/pStZ71z14R2Ks/giphy.gif',
   'https://media.giphy.com/media/3o6ZsXTJkgqLvrrH6E/giphy.gif',
-  'https://media.giphy.com/media/3oEduEv8ykooQvuNEc/giphy.gif'
+  'https://media.giphy.com/media/3oEduEv8ykooQvuNEc/giphy.gif',
+  'https://media.giphy.com/media/M0KZmnz5TDwf6/giphy.gif',
+  'https://media.giphy.com/media/ikfLpQzXmbTnG/giphy.gif',
+  'https://media.giphy.com/media/26ybw6AltpBRmyS76/giphy.gif',
+  'https://media.giphy.com/media/3o6Zt0u5axHuOYOEH6/giphy.gif'
 ];
 
 const byeGifs = [
   'https://media.giphy.com/media/Y8ocCgwtdj29O/giphy.gif',
   'https://media.giphy.com/media/GB0lKzzxIv1te/giphy.gif',
-  'https://media.giphy.com/media/l2Sq5L1byCRgztEZi/giphy.gif'
+  'https://media.giphy.com/media/l2Sq5L1byCRgztEZi/giphy.gif',
+  'https://media.giphy.com/media/3osxYpQ20pysGhUW08/giphy.gif',
+  'https://media.giphy.com/media/l396M3jF14DXr9mog/giphy.gif',
+  'https://media.giphy.com/media/26AHJ9mZjOjaTt8IM/giphy.gif',
+  'https://media.giphy.com/media/d2Z32dYcs4S2Ov72/giphy.gif',
+  'https://media.giphy.com/media/5xtDarEgBDjEoWo6VRS/giphy.gif',
+  'https://media.giphy.com/media/trGtPJai2xwI/giphy.gif',
+  'https://media.giphy.com/media/7iZmNXySAYexG/giphy.gif',
+  'https://media.giphy.com/media/80HmBdIXjR2Cs/giphy.gif',
+  'https://media.giphy.com/media/CfI69NjLvfkVa/giphy.gif',
+  'https://media.giphy.com/media/Ih3HgezTb4wW4/giphy.gif'
 ];
 
 const reactionPhrase = [
@@ -103,7 +117,9 @@ const saveTMI = (index, tmi) => {
 
 controller.on('direct_message,direct_mention,mention', function(bot, message) {
   const data = db.getData('/chat');
-  const index = getRanIdx(data);
+  const rando = Math.floor(Math.random() * (data.length + 4))
+  // const index = getRanIdx(data);
+  const index = rando >= data.length ? data.length - 1 : rando;
   const problem = data[index];
 
   const tellSomethingPrivate = (response, convo) => {
