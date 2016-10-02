@@ -21,8 +21,8 @@ var data = db.getData('/chat');
 
 const { hears } = controller;
 const patterns = {
-  good: 'good|great|awesome|alright|tight|sweet|amazing',
-  bad: 'bad|not|terrible|shit|crap|turd|fuck|awful'
+  good: 'good|great|awesome|alright|tight|sweet|amazing|excited|fun|best|better',
+  bad: 'bad|not|terrible|shit|crap|turd|fuck|awful|tired|bummer|exhausted|worse|nope'
 };
 
 const introPhrases = [

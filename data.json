@@ -1,1 +1,49 @@
-{"chat":[{"intro":"It's hard being me","question":"What's the worst part about being you?","tmi":["My life is one repeating playback of all my failures.","The long dark hours spent contemplating my existance","my inability to feel confident in otherwise happy situations"]},{"intro":"So my ex","question":"Tell me about your ex.","tmi":["I was left for someone else, and that someone else was my best friend.","she was crazy, made me really miserable"]},{"intro":"I'm a bit of a kink","question":"So, are you into kinky stuff, or ...","tmi":["I can only get off if I think about my high school science teacher"]},{"intro":"I've been hurt","question":"Who hurt you?","tmi":["my father never really paid any attention to me, I was more of an after thought"]},{"intro":"In this life I have regrets","question":"What’s your biggest regret?","tmi":["the one time I dropped out of school and have paid the price ever since. now I'm not living the life I want.","not taking family ands school more seriously when i was younger"]},{"intro":"From time to time I get weird","question":"Got any weird compulsions, pal o’ mine?","tmi":["I pick my nose and wipe it all over my roommates stuff"]}]}
+{
+"chat":[
+{
+"intro":"It's hard being me",
+"question":"What's the worst part about being you?",
+"tmi":[
+"My life is one repeating playback of all my failures.",
+"The long dark hours spent contemplating my existance",
+"my inability to feel confident in otherwise happy situations"
+]
+},
+{
+"intro":"So my ex",
+"question":"Tell me about your ex.",
+"tmi":[
+"I was left for someone else, and that someone else was my best friend.",
+"she was crazy, made me really miserable"
+]
+},
+{
+"intro":"I'm a bit of a kink",
+"question":"So, are you into kinky stuff, or ...",
+"tmi":[
+"I can only get off if I think about my high school science teacher"
+]
+},
+{
+"intro":"I've been hurt",
+"question":"Who hurt you?",
+"tmi":[
+"my father never really paid any attention to me, I was more of an after thought"
+]
+},
+{
+"intro":"In this life I have regrets",
+"question":"What’s your biggest regret?",
+"tmi":[
+"the one time I dropped out of school and have paid the price ever since. now I'm not living the life I want."
+]
+},
+{
+"intro":"From time to time I get weird",
+"question":"Got any weird compulsions, pal o’ mine?",
+"tmi":[
+"I pick my nose and wipe it all over my roommates stuff"
+]
+}
+]
+}
