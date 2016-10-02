@@ -36,9 +36,9 @@ const positiveGifs = [
   'https://media.giphy.com/media/h2MLtoOjxtkGY/giphy.gif',
   'https://media.giphy.com/media/YXPZ3W7UAVOZW/giphy.gif',
   'https://media.giphy.com/media/3o7abBP0nMjrdIvaCY/giphy.gif',
-  'https://media.giphy.com/media/LLHkw7UnvY3Kw/giphy.gif',
   'https://media.giphy.com/media/DYH297XiCS2Ck/giphy.gif',
   'https://media.giphy.com/media/bqrG9EUt9vS4U/giphy.gif',
+  'https://media.giphy.com/media/2R78MsGSola12/giphy.gif'
 ];
 
 const negativeGifs = [
@@ -48,12 +48,15 @@ const negativeGifs = [
   'https://media.giphy.com/media/SDogLD4FOZMM8/giphy.gif',
   'https://media.giphy.com/media/8nmvR3jAxnl2o/giphy.gif',
   'https://media.giphy.com/media/WIAxZtUxUY000/giphy.gif',
-  'https://media.giphy.com/media/5LeiUijss0afS/giphy.gif'
+  'https://media.giphy.com/media/5LeiUijss0afS/giphy.gif',
+  'https://media.giphy.com/media/Dxlt1TY7WHLm8/giphy.gif'
 ];
 
 const byeGifs = [
   'https://media.giphy.com/media/3orieStB8OH7lanfGg/giphy.gif',
   'https://media.giphy.com/media/Y8ocCgwtdj29O/giphy.gif',
+  'https://media.giphy.com/media/GB0lKzzxIv1te/giphy.gif',
+  'https://media.giphy.com/media/l2Sq5L1byCRgztEZi/giphy.gif'
 ];
 
 const getRanIdx = array => Math.floor(Math.random() * array.length);
