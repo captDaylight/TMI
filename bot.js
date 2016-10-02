@@ -21,8 +21,8 @@ var data = db.getData('/chat');
 
 const { hears } = controller;
 const patterns = {
-  good: 'good|great|awesome|alright|tight|sweet|amazing|excited|fun|best|better',
-  bad: 'bad|not|terrible|shit|crap|turd|fuck|awful|tired|bummer|exhausted|worse|nope'
+  good: 'good|great|awesome|alright|tight|sweet|amazing|excited|fun|best|better|ok',
+  bad: 'bad|not|terrible|shit|crap|turd|fuck|awful|tired|bummer|exhausted|worse|nope|fine'
 };
 
 const introPhrases = [
@@ -38,7 +38,18 @@ const positiveGifs = [
   'https://media.giphy.com/media/3o7abBP0nMjrdIvaCY/giphy.gif',
   'https://media.giphy.com/media/DYH297XiCS2Ck/giphy.gif',
   'https://media.giphy.com/media/bqrG9EUt9vS4U/giphy.gif',
-  'https://media.giphy.com/media/2R78MsGSola12/giphy.gif'
+  'https://media.giphy.com/media/2R78MsGSola12/giphy.gif',
+  'https://media.giphy.com/media/xTiTnyijMsXgn6Bzzy/giphy.gif',
+  'https://media.giphy.com/media/3NtY188QaxDdC/giphy.gif',
+  'https://media.giphy.com/media/l0MYOwS7JDddcyo3m/giphy.gif',
+  'https://media.giphy.com/media/rDbelKPujYEBq/giphy.gif',
+  'https://media.giphy.com/media/10UeedrT5MIfPG/giphy.gif',
+  'https://media.giphy.com/media/WyeodYfrqvHCo/giphy.gif',
+  'https://media.giphy.com/media/3o7qDDQvIy2yj3QkoM/giphy.gif',
+  'https://media.giphy.com/media/BQAk13taTaKYw/giphy.gif',
+  'https://media.giphy.com/media/1EnVAKJGFjoM8/giphy.gif',
+  'https://media.giphy.com/media/9Y6n9TR7U07ew/giphy.gif',
+
 ];
 
 const negativeGifs = [
@@ -49,7 +60,13 @@ const negativeGifs = [
   'https://media.giphy.com/media/8nmvR3jAxnl2o/giphy.gif',
   'https://media.giphy.com/media/WIAxZtUxUY000/giphy.gif',
   'https://media.giphy.com/media/5LeiUijss0afS/giphy.gif',
-  'https://media.giphy.com/media/Dxlt1TY7WHLm8/giphy.gif'
+  'https://media.giphy.com/media/Dxlt1TY7WHLm8/giphy.gif',
+  'https://media.giphy.com/media/LytiZGHa3DbCE/giphy.gif',
+  'https://media.giphy.com/media/l41lJbSQXQbjYQgOA/giphy.gif',
+  'https://media.giphy.com/media/bMehR5UxZuFS8/giphy.gif',
+  'https://media.giphy.com/media/pStZ71z14R2Ks/giphy.gif',
+  'https://media.giphy.com/media/3o6ZsXTJkgqLvrrH6E/giphy.gif',
+  'https://media.giphy.com/media/3oEduEv8ykooQvuNEc/giphy.gif'
 ];
 
 const byeGifs = [
@@ -57,6 +74,15 @@ const byeGifs = [
   'https://media.giphy.com/media/GB0lKzzxIv1te/giphy.gif',
   'https://media.giphy.com/media/l2Sq5L1byCRgztEZi/giphy.gif'
 ];
+
+const reactionPhrase = [
+  'Wow, that\'s heavy.',
+  'Thanks for sharing.',
+  'Oh wow.',
+  'I understand.',
+  'Thank you for sharing',
+  '<3'
+]
 
 const getRanIdx = array => Math.floor(Math.random() * array.length);
 const getRanItem = array => array[getRanIdx(array)];
@@ -94,8 +120,8 @@ controller.on('direct_message,direct_mention,mention', function(bot, message) {
         saveTMI(index, tmi);
       }
 
-      bot.reply(message, `Wow, that's heavy.`);
-      bot.reply(message, `Thanks for sharing. It was great talking to you.`);
+      bot.reply(message, getRanItem(reactionPhrase));
+      bot.reply(message, `Take care. It was good talking to you.`);
       bot.reply(message, {attachments: [{
         text: 'WOOF WOOF',
         image_url: getRanItem(byeGifs),
@@ -157,19 +183,19 @@ controller.on('direct_message,direct_mention,mention', function(bot, message) {
     }]});
 
     convo.ask(`${getRanItem(introPhrases)}. how are you?`, [
-      {
-        pattern: patterns.good,
-        callback: function(response,convo) {
-          // do something else...
-          bot.reply(message, {attachments: [{
-            text: 'WOOF WOOF',
-            image_url: getRanItem(positiveGifs),
-          }]});
+      // {
+      //   pattern: patterns.good,
+      //   callback: function(response,convo) {
+      //     // do something else...
+      //     bot.reply(message, {attachments: [{
+      //       text: 'WOOF WOOF',
+      //       image_url: getRanItem(positiveGifs),
+      //     }]});
 
-          askSimpleQuestion(response, convo, true);
-          convo.next();
-        }
-      },
+      //     askSimpleQuestion(response, convo, true);
+      //     convo.next();
+      //   }
+      // },
       {
         pattern: patterns.bad,
         callback: function(response,convo) {
@@ -187,7 +213,14 @@ controller.on('direct_message,direct_mention,mention', function(bot, message) {
         default: true,
         callback: function(response,convo) {
           // just repeat the question
-          convo.repeat();
+          // convo.repeat();
+          bot.reply(message, {attachments: [{
+            text: 'WOOF WOOF',
+            image_url: getRanItem(positiveGifs),
+          }]});
+
+          askSimpleQuestion(response, convo, true);
+          convo.next();
           convo.next();
         }
       }
