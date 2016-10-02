@@ -21,8 +21,8 @@ var data = db.getData('/chat');
 
 const { hears } = controller;
 const patterns = {
-  good: 'good|great|awesome|alright|tight|sweet',
-  bad: 'bad|not|terrible|shit|crap|turd|fuck'
+  good: 'good|great|awesome|alright|tight|sweet|amazing',
+  bad: 'bad|not|terrible|shit|crap|turd|fuck|awful'
 };
 
 const introPhrases = [
@@ -82,7 +82,7 @@ controller.on('direct_message,direct_mention,mention', function(bot, message) {
   const problem = data[index];
 
   const tellSomethingPrivate = (response, convo) => {
-    bot.reply(message, `${problem.intro}, ${getRanItem(problem.tmi)}`);
+    bot.reply(message, `${problem.intro} ${getRanItem(problem.tmi).toLowerCase()}`);
     bot.reply(message, '...');
     askSomethingPrivate(response, convo);
     convo.next();
@@ -95,8 +95,8 @@ controller.on('direct_message,direct_mention,mention', function(bot, message) {
         saveTMI(index, tmi);
       }
 
-      bot.reply(message, `WOW that's super heavy.`);
-      bot.reply(message, `OK well, great talking to you`);
+      bot.reply(message, `Wow, that's heavy.`);
+      bot.reply(message, `Thanks for sharing. It was great talking to you.`);
       bot.reply(message, {attachments: [{
         text: 'WOOF WOOF',
         image_url: getRanItem(byeGifs),
